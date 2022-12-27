@@ -1,0 +1,5 @@
+take
+take itemquiexistepas
+take carte
+drop itemquiexistepas
+drop carte
