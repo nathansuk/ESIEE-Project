@@ -2,6 +2,7 @@ package Graou.pkgCommands;
 
 import Graou.pkgCore.GameEngine;
 import Graou.Player;
+import Graou.pkgItems.Item;
 
 /**
  * Décrivez votre classe TakeCommand ici.
@@ -19,16 +20,24 @@ public class TakeCommand extends Command
     {
     }
 
-    public boolean execute(Player pPlayer)
+    public boolean execute(final Player pPlayer)
     {
         if(this.hasSecondWord())
         {
             String vNomItem = this.getSecondWord();
-            
-            if(pPlayer.getCurrentRoom().getItems().getItem(vNomItem) != null){
-                pPlayer.getItemList().ajouter(pPlayer.getCurrentRoom().getItems().getItem(vNomItem));  
-                pPlayer.getCurrentRoom().getItems().retirer(vNomItem);
-                GameEngine.getGui().println(vNomItem + " a été ajouté à l'inventaire");
+            Item vItem = pPlayer.getCurrentRoom().getItems().getItem(vNomItem);
+            if(vItem != null){
+                
+                if(pPlayer.getItemList().getTotalWeight() + vItem.getWeight() > pPlayer.getMaxWeight())
+                {
+                    GameEngine.getGui().println("Vous n'êtes pas en mesure de porter plus d'objet.");
+                }
+                else 
+                {         
+                    pPlayer.getItemList().ajouter(vItem);  
+                    pPlayer.getCurrentRoom().getItems().retirer(vNomItem);
+                    GameEngine.getGui().println(vNomItem + " a été ajouté à l'inventaire");   
+                }
             } else {
                 GameEngine.getGui().println("Cet objet n'est pas dans la pièce.");
             }

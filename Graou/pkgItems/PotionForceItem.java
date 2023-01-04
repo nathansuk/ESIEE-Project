@@ -11,6 +11,7 @@ import Graou.pkgCore.GameEngine;
  */
 public class PotionForceItem extends Item implements Usable
 {
+    private final int AUGMENTATION_FORCE = 100;
     
     /**
      * Constructeur d'objets de classe PotionForceItem
@@ -19,9 +20,13 @@ public class PotionForceItem extends Item implements Usable
         super(pNom, pDescription, pPrix, pWeight);
     }
 
-    
-    public void use(Player pPlayer)
+    /**
+     * Modifie le nombre d'objet qu'un joueur peut porter.
+     * @param pPlayer le joueur ciblé
+     */
+    public void use(final Player pPlayer)
     {
-        pPlayer.setMaxWeight(5);
+        pPlayer.setMaxWeight(AUGMENTATION_FORCE);
+        GameEngine.getGui().println("Vous pouvez désormais porter : " + AUGMENTATION_FORCE + "grammes dans votre inventaire.");
     }
 }

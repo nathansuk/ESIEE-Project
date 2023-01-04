@@ -1,6 +1,7 @@
 package Graou.pkgCore;
 
 import Graou.Player;
+import Graou.Character;
 import Graou.pkgRooms.Room;
 import Graou.pkgItems.BeamerItem;
 import Graou.pkgItems.PotionForceItem;
@@ -134,8 +135,8 @@ public class GameEngine
         placePrincipale.getItems().ajouter(vCarte);
         placePrincipale.getItems().ajouter(vBeamer);
         
+        Character vVillageois = new Character("Gérard", "BONJOUR!", entreeVillage);
         
-                
         this.aPlayer = new Player(entreeVillage); // à déplacer
         this.aPlayer.addRoomToHistory(entreeVillage);// start game outside
 

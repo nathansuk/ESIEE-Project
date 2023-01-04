@@ -25,7 +25,7 @@ public class Player
         this.aCurrentRoom = pCurrentRoom;
         this.aRoomHistory = new Stack<Room>();
         this.aInventory = new ItemList();
-        this.aMaxWeight = 0;
+        this.aMaxWeight = 10.0;
     }// Player()
     
     /**

@@ -1,7 +1,9 @@
 package Graou.pkgRooms;
 
+import Graou.Character;
 import Graou.pkgItems.ItemList;
 import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Set;
 /**
  * Classe Room - un lieu du jeu d'aventure.
@@ -14,6 +16,7 @@ public class Room
     private HashMap<String, Room> aExits;
     private ItemList aItems;
     private String aImageName;
+    private ArrayList<Character> aCharacters;
     
     /**
      * Constructeur
@@ -26,6 +29,7 @@ public class Room
         this.aExits = new HashMap<String, Room>();
         this.aItems = new ItemList();
         this.aImageName = pImage;
+        this.aCharacters = new ArrayList<Character>();
     }// Room()
     
     /**
@@ -84,7 +88,17 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "Vous vous trouvez : " + this.aDescription + ".\n" + this.getExitString() + "\n" + "Vous pouvez ramasser ici : " + this.aItems.getItemsString();
+        String vString = "Vous vous trouvez : " + this.aDescription + ".\n" + this.getExitString() + "\n";
+        
+        if(!this.aItems.estVide()) {
+             vString += "Vous pouvez ramasser ici : " + this.aItems.getItemsString();
+        }
+                
+        if(this.hasCharacter())
+        {
+            vString += "Il y a : " + this.aCharacters.size() + " personne à qui vous pouvez parler : " + this.getCharactersString();
+        }
+        return vString;
     }// getLongDescription()
     
     /**
@@ -94,5 +108,34 @@ public class Room
     {
          return this.aImageName;
     } // getImageName()
+    
+    /**
+     * Ajoute un Character à la liste
+     */
+    public void addCharacter(final Character pCharacter)
+    {
+        this.aCharacters.add(pCharacter);
+    }
+    
+    /**
+     * @return si la room contient des Character
+     */
+    public boolean hasCharacter()
+    {
+        return this.aCharacters.size() > 0;
+    }
+    
+    /**
+     * @return une chaîne de charactère listant les personnages non jouables présents dans la pièce
+     */
+    public String getCharactersString()
+    {
+        String vString = "";
+        for(Character vPersonnage : this.aCharacters)
+        {
+            vString += vPersonnage.getNom() + ", ";
+        }
+        return vString;
+    }
 
 } // Room

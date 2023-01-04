@@ -90,17 +90,33 @@ public class UserInterface implements ActionListener
         this.aEntryField = new JTextField( 34 );
 
         /* Création du panel utilisateur */
+        
+        // Création des boutons et assignation des évènements
+        // En partie aidé depuis : https://www.javatpoint.com/java-awt-button
         Panel vPanelUser = new Panel();
-        Button buttonDir = new Button("go east");
-        Button buttonDir2 = new Button("go west");
-        Button button3 = new Button("inventaire");
-        Label vLabel = new Label("Compteur de mouvement : ");
+        Button vButtonDir = new Button("go east");
+        Button vButtonDir2 = new Button("go west");
+        Button vButtonDir3 = new Button("go north");
+        Button vButtonDir4 = new Button("go south");
+        Button vButtonInventaire = new Button("inventaire");
+        Button vButtonBack = new Button("back");
+        
+        vButtonDir.addActionListener( this );
+        vButtonDir2.addActionListener( this );
+        vButtonDir3.addActionListener( this );
+        vButtonDir4.addActionListener( this );
+        vButtonInventaire.addActionListener( this );
+        vButtonBack.addActionListener( this );
+        
         GridLayout vBorder = new GridLayout(3, 2);
+        
         vPanelUser.setLayout( vBorder );
-        vPanelUser.add(buttonDir);
-        vPanelUser.add(buttonDir2);
-        vPanelUser.add(button3);
-        vPanelUser.add(vLabel);
+        vPanelUser.add(vButtonDir);
+        vPanelUser.add(vButtonDir2);
+        vPanelUser.add(vButtonDir3);
+        vPanelUser.add(vButtonDir4);
+        vPanelUser.add(vButtonInventaire);
+        vPanelUser.add(vButtonBack);
         
 
         this.aLog = new JTextArea();
@@ -125,7 +141,6 @@ public class UserInterface implements ActionListener
 
         // add some event listeners to some components
         this.aEntryField.addActionListener( this );
-        buttonDir.addActionListener( this );
 
         // to end program when window is closed
         this.aMyFrame.addWindowListener( new WindowAdapter() {
@@ -142,7 +157,15 @@ public class UserInterface implements ActionListener
      */
     public void actionPerformed( final ActionEvent pE ) 
     {   
-        this.processCommand(); // never suppress this line   
+        if(pE.getSource() instanceof Button)
+        {
+            Button vBoutonClique = (Button)pE.getSource();
+            Command vCommande = this.aEngine.getParser().getCommand( vBoutonClique.getLabel() );
+            
+            this.processCommand(vCommande);
+        } else {
+            this.processCommand(); // never suppress this line      
+        }
     } // actionPerformed(.)
 
     /**
@@ -175,7 +198,7 @@ public class UserInterface implements ActionListener
         boolean finished = false;
 
         if(vCommande == null) {
-            this.aEngine.getGui().println("I don't understand...");
+            this.aEngine.getGui().println("Commande inconnue");
         } 
         else {
             finished = vCommande.execute(this.aEngine.getPlayer());
