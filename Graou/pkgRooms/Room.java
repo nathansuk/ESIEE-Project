@@ -3,7 +3,6 @@ package Graou.pkgRooms;
 import Graou.Character;
 import Graou.pkgItems.ItemList;
 import java.util.HashMap;
-import java.util.ArrayList;
 import java.util.Set;
 /**
  * Classe Room - un lieu du jeu d'aventure.
@@ -16,7 +15,7 @@ public class Room
     private HashMap<String, Room> aExits;
     private ItemList aItems;
     private String aImageName;
-    private ArrayList<Character> aCharacters;
+    private HashMap<String, Character> aCharacters;
     
     /**
      * Constructeur
@@ -29,7 +28,7 @@ public class Room
         this.aExits = new HashMap<String, Room>();
         this.aItems = new ItemList();
         this.aImageName = pImage;
-        this.aCharacters = new ArrayList<Character>();
+        this.aCharacters = new HashMap<String, Character>();
     }// Room()
     
     /**
@@ -109,12 +108,22 @@ public class Room
          return this.aImageName;
     } // getImageName()
     
+    public HashMap<String, Character> getCharacters()
+    {
+        return this.aCharacters;
+    }
+    
+    public Character getCharacter(final String pNom)
+    {
+        return this.aCharacters.get(pNom);
+    }
+    
     /**
      * Ajoute un Character à la liste
      */
-    public void addCharacter(final Character pCharacter)
+    public void addCharacter(final String pNom, final Character pCharacter)
     {
-        this.aCharacters.add(pCharacter);
+        this.aCharacters.put(pNom, pCharacter);
     }
     
     /**
@@ -131,11 +140,12 @@ public class Room
     public String getCharactersString()
     {
         String vString = "";
-        for(Character vPersonnage : this.aCharacters)
-        {
-            vString += vPersonnage.getNom() + ", ";
+        Set<String> vPersonnages = this.aCharacters.keySet();
+        for(String vNomPersonnage : vPersonnages){
+            vString += vNomPersonnage+", ";
         }
         return vString;
     }
+
 
 } // Room

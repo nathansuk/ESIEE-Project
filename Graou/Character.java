@@ -25,7 +25,7 @@ public class Character
         this.aCurrentRoom = pCurrentRoom;
         
         //Lorsqu'un personnage est assigné dans une Room, on met à jour la liste des personnages de la Room
-        this.aCurrentRoom.addCharacter(this);
+        this.aCurrentRoom.addCharacter(pNom, this);
     }
 
     public String getNom()

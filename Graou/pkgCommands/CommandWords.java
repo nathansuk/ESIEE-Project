@@ -33,6 +33,7 @@ public class CommandWords
         commands.put("take", new TakeCommand());
         commands.put("drop", new DropCommand());
         commands.put("use", new UseCommand());
+        commands.put("talk", new TalkCommand());
     }
 
     /**
