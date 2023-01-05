@@ -26,17 +26,26 @@ public class Character
         //Lorsqu'un personnage est assigné dans une Room, on met à jour la liste des personnages de la Room
         this.aCurrentRoom.addCharacter(pNom, this);
     }
-
+    
+    /**
+     * @return le nom du personnage
+     */
     public String getNom()
     {
         return this.aNom;
-    }
+    } // getNom()
     
+    /**
+     * @return la/les ligne.s de dialogue du personnage
+     */
     public String getDialogue()
     {
         return this.aDialogue;
     }
     
+    /**
+     * @return la Room dans laquelle se trouve le personnage
+     */
     public Room getCurrentRoom()
     {
         return this.aCurrentRoom;

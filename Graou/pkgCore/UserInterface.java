@@ -81,7 +81,6 @@ public class UserInterface implements ActionListener
             this.aEntryField.getCaret().setBlinkRate( 0 ); // cursor won't blink
             this.aEntryField.removeActionListener( this ); // won't react to entry
             this.aGameRunning = false;
-            this.println("La limite de mouvement a été atteinte. Vous avez perdu !");
         }
     } // enable(.)
 
@@ -132,6 +131,7 @@ public class UserInterface implements ActionListener
 
         JPanel vPanel = new JPanel();
         this.aImage = new JLabel();
+        this.aImage.setMaximumSize(new Dimension(500, 300));
 
         vPanel.setLayout( new BorderLayout() ); // ==> only five places
         vPanel.add( this.aImage, BorderLayout.NORTH );
@@ -188,7 +188,7 @@ public class UserInterface implements ActionListener
         
         Command command = this.aEngine.getParser().getCommand( vInput );
         if(command == null) {
-            this.aEngine.getGui().println("I don't understand...");
+            this.aEngine.getGui().println("Je n'ai pas compris...");
         } 
         else {
             finished = command.execute(this.aEngine.getPlayer());
@@ -225,8 +225,21 @@ public class UserInterface implements ActionListener
         if ( pRoom.getImageName() != null )
             this.showImage( pRoom.getImageName() );
             
-        if(!this.aEngine.getPlayer().resteMouvement())
-            this.enable(false);
-    }// updateRoom()
+        if(!this.aEngine.getPlayer().resteMouvement()){
+            this.println("La limite de mouvement a été atteinte. Vous avez perdu !");
+            this.enable(false);   
+        }
+    }// updateInterface()
+    
+    /**
+     * Affiche un message pour dire que le jeu a été gagné et désactive l'interface
+     */
+    public void gameIsWon()
+    {
+        this.println("Bravo ! Vous avez tué le loup, le jeu a été gagné :)");
+        this.enable(false);
+    }//gameIsWon()
+    
+    
     
 } // UserInterface 

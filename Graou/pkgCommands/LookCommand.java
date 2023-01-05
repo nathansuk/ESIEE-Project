@@ -5,10 +5,9 @@ import Graou.Player;
 import Graou.pkgRooms.Room;
 import Graou.pkgItems.Item;
 /**
- * Commande permettant d'afficher les items présents dans la pièce
+ * Commande Look
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class LookCommand extends Command
 {
@@ -21,7 +20,7 @@ public class LookCommand extends Command
     }
 
     /**
-     * Liste les items de la room et affiche une chaîne de caractère
+     * Liste les items de la room et affiche une chaîne de caractère, si un second mot est passé affiche la description de l'item
      *
      * @param  pPlayer Joueur concerné
      * @return boolean 

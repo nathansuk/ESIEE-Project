@@ -44,5 +44,9 @@ public abstract class Command
         this.aSecondWord = pSecondWord;
     }
     
+    /**
+     * Execute la logique associée à une commande
+     * @return boolean
+     */
     public abstract boolean execute(Player pPlayer);
 } // Command

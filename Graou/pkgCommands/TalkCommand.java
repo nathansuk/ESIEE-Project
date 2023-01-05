@@ -5,10 +5,9 @@ import Graou.Character;
 import Graou.pkgCore.GameEngine;
 import Graou.pkgRooms.Room;
 /**
- * Décrivez votre classe TalkCommand ici.
+ * Commande Talk
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @authorNathan SUK
  */
 public class TalkCommand extends Command
 {
@@ -20,6 +19,9 @@ public class TalkCommand extends Command
     {
     }
     
+    /**
+     * Détecte si un personnage est présent dans la pièce, regarde si le nom est correct, si oui, afficher son dialogue
+     */
     public boolean execute(final Player pPlayer)
     {
          if(this.hasSecondWord())

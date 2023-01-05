@@ -5,10 +5,9 @@ import Graou.Player;
 import Graou.pkgItems.Item;
 
 /**
- * Décrivez votre classe TakeCommand ici.
+ * Commande Take
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class TakeCommand extends Command
 {
@@ -19,7 +18,10 @@ public class TakeCommand extends Command
     public TakeCommand()
     {
     }
-
+    
+    /**
+     * Le joueur prend un des objets de la room avec le nom associé au second mot
+     */
     public boolean execute(final Player pPlayer)
     {
         if(this.hasSecondWord())

@@ -72,11 +72,11 @@ public class Room
      */
     public String getExitString()
     {
-        String vString = "Sorties : ";
+        String vString = "Sorties possibles : ";
         
         Set<String> vExits = this.aExits.keySet();
         for(String vSortie : vExits){
-            vString += vSortie+", ";
+            vString += vSortie+" ";
         }
         
         return vString;
@@ -87,7 +87,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        String vString = "Vous vous trouvez : " + this.aDescription + ".\n" + this.getExitString() + "\n";
+        String vString = this.aDescription + ".\n" + this.getExitString() + "\n";
         
         if(!this.aItems.estVide()) {
              vString += "Vous pouvez ramasser ici : " + this.aItems.getItemsString();
@@ -95,7 +95,7 @@ public class Room
                 
         if(this.hasCharacter())
         {
-            vString += "Il y a : " + this.aCharacters.size() + " personne à qui vous pouvez parler : " + this.getCharactersString();
+            vString += "Il y a " + this.aCharacters.size() + " personne à qui vous pouvez parler : " + this.getCharactersString();
         }
         return vString;
     }// getLongDescription()
@@ -142,7 +142,7 @@ public class Room
         String vString = "";
         Set<String> vPersonnages = this.aCharacters.keySet();
         for(String vNomPersonnage : vPersonnages){
-            vString += vNomPersonnage+", ";
+            vString += vNomPersonnage+" ";
         }
         return vString;
     }

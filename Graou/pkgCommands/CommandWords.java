@@ -10,7 +10,7 @@ import Graou.pkgCore.GameEngine;
  * This class holds a collection of all command words known to the game.
  * It is used to recognise commands as they are typed in.
  *
- * @author Michael Kolling and David J. Barnes
+ * @author Michael Kolling and David J. Barnes, Nathan SUK (ajout des commandes)
  * @version 2011.07.31
  */
 
@@ -41,7 +41,7 @@ public class CommandWords
      * Given a command word, find and return the matching command object.
      * Return null if there is no command with this name.
      */
-    public Command get(String word)
+    public Command get(final String word)
     {
         return (Command)commands.get(word);
     }

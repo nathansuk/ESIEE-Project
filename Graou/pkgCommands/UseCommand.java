@@ -5,10 +5,9 @@ import Graou.pkgCore.GameEngine;
 import Graou.pkgItems.BeamerItem;
 import Graou.pkgItems.UsableItem;
 /**
- * Décrivez votre classe UseCommand ici.
+ * Commande Use
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class UseCommand extends Command
 {
@@ -21,10 +20,9 @@ public class UseCommand extends Command
     }
 
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
+     * Regarde si l'item passé en deuxième mot est présent dans l'inventaire et si c'est un item Utilisable, si oui, l'utiliser en appelant Item.use()
      *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * @param  pPlayer joueur
      */
     public boolean execute(Player pPlayer)
     {

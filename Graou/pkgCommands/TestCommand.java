@@ -6,7 +6,7 @@ import java.io.File;
 import Graou.pkgCore.GameEngine;
 import Graou.Player;
 /**
- * Classe de la commande Test.
+ * Commande Test
  *
  * @author Nathan SUK
  */
@@ -20,9 +20,14 @@ public class TestCommand extends Command
     {
     }
 
+    /**
+     * Va chercher le fichier de test dans le dossier /Tests
+     * Execute chaque commande une à une.
+     * @return false
+     */
     public boolean execute(Player pPlayer)
     {
-        String vFichier = "Tests/"+this.getSecondWord()+".txt"; // to do
+        String vFichier = "Tests/"+this.getSecondWord()+".txt"; 
         try (Scanner vScanner = new Scanner(new File(vFichier))) {
             while(vScanner.hasNext()) {
                 String vCommandeString = vScanner.nextLine();
@@ -34,5 +39,5 @@ public class TestCommand extends Command
             GameEngine.getGui().println("Attention ! Le fichier de test n'a pas été trouvé");
         }
         return false;
-    }
+    }// execute()
 }

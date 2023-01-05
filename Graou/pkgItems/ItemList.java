@@ -91,11 +91,11 @@ public class ItemList
         } else {
             Set<String> vItems = this.aListeItem.keySet();
             for(String vItem : vItems){
-                vString += vItem+", \n";
+                vString += vItem+" ";
             }   
         }
         
-        return vString;
+        return vString+"\n";
         
     } // getItemString()
     

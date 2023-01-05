@@ -21,7 +21,7 @@ public abstract class DestroyableItem extends UsableItem
     {
         ItemList vItemList = pPlayer.getItemList();
         vItemList.getItemList().remove(this.getNom());
-        GameEngine.getGui().println(this.getNom() + " a été utilé et a été supprimé de l'inventaire.");
-    }
+        GameEngine.getGui().println(this.getNom() + " a été utilisé et a disparu de l'inventaire.");
+    } // destroyItem()
 
 }

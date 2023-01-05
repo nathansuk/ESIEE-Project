@@ -3,10 +3,9 @@ package Graou.pkgCommands;
 import Graou.Player;
 import Graou.pkgCore.GameEngine;
 /**
- * Décrivez votre classe HelpCommand ici.
+ * Commande Help
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class HelpCommand extends Command
 {
@@ -19,10 +18,9 @@ public class HelpCommand extends Command
     }
 
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
+     * Affiche l'ensemble des commandes
      *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * @param  pPlayer
      */
     public boolean execute(Player pPlayer)
     {

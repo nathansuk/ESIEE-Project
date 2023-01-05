@@ -3,10 +3,9 @@ package Graou.pkgCommands;
 import Graou.pkgCore.GameEngine;
 import Graou.Player;
 /**
- * Décrivez votre classe DropCommand ici.
+ * Commande Drop
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class DropCommand extends Command
 {
@@ -17,8 +16,12 @@ public class DropCommand extends Command
     public DropCommand()
     {
     }
-
-    public boolean execute(Player pPlayer)
+    
+    /**
+     * Supprime l'item de l'inventaire de l'utilisateur et le repose dans la pièce où le joueur se trouve
+     * @param pPlayer joueur
+     */
+    public boolean execute(final Player pPlayer)
     {
         if(this.hasSecondWord()){
             String vItemName = this.getSecondWord();

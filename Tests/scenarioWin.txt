@@ -1,0 +1,14 @@
+take potion
+use potion
+go north
+go north
+go north
+go down
+take epee
+back 
+back
+back
+go east
+go north
+go down
+use epee

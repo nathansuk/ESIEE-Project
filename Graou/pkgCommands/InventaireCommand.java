@@ -3,10 +3,9 @@ package Graou.pkgCommands;
 import Graou.Player;
 import Graou.pkgCore.GameEngine;
 /**
- * Décrivez votre classe InventaireCommand ici.
+ * Commande Inventaire
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class InventaireCommand extends Command
 {
@@ -17,7 +16,11 @@ public class InventaireCommand extends Command
     public InventaireCommand()
     {
     }
-
+    
+    /**
+     * Liste les items présents dans l'inventaire
+     * @param pPlayer joueur
+     */
     public boolean execute(Player pPlayer)
     {
         GameEngine.getGui().println(" Votre inventaire contient : " + pPlayer.getItemList().getItemsString());

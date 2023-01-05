@@ -27,8 +27,8 @@ public class Player
         this.aCurrentRoom = pCurrentRoom;
         this.aRoomHistory = new Stack<Room>();
         this.aInventory = new ItemList();
-        this.aMaxWeight = 10.0;
-        this.aMouvementRestant = 2;
+        this.aMaxWeight = 10.0;         // Par défaut
+        this.aMouvementRestant = 15;    // Par défaut
     }// Player()
     
     /**
@@ -118,6 +118,12 @@ public class Player
         this.addRoomToHistory(pNextRoom);
         this.removeMouvement();
         GameEngine.getGui().updateInterface(this.aCurrentRoom);
+        
+        //Si le joueur arrive dans la pièce où est le Loup et qu'il n'a pas d'arme (epee)
+        if(pNextRoom.getCharacters().get("Loup") != null && this.getItemList().getItem("epee") == null){
+            GameEngine.getGui().println("SACREBLEU ! Vous venez de rencontrer le loup et vous n'avez pas d'arme. Vous vous faite dévorer...");
+            GameEngine.getGui().enable(false);
+        }
     } // move()
     
     /**

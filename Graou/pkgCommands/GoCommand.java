@@ -4,10 +4,9 @@ import Graou.Player;
 import Graou.pkgRooms.Room;
 import Graou.pkgCore.GameEngine;
 /**
- * Décrivez votre classe GoCommand ici.
+ * Commande Go
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class GoCommand extends Command
 {
@@ -22,7 +21,7 @@ public class GoCommand extends Command
     /**
      * Execution de la commande "go [direction]"
      *
-     * @param  pPlayer joueur concerné.
+     * @param  pPlayer joueur
      */
     public boolean execute(Player pPlayer)
     {

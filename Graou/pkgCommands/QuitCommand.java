@@ -3,10 +3,9 @@ package Graou.pkgCommands;
 import Graou.pkgCore.GameEngine;
 import Graou.Player;
 /**
- * Décrivez votre classe QuitCommand ici.
+ * Commande Quit
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class QuitCommand extends Command
 {
@@ -14,7 +13,10 @@ public class QuitCommand extends Command
     {
     }
     
-    public boolean execute(Player pPlayer)
+    /**
+     * Désactive l'interface si executée.
+     */
+    public boolean execute(final Player pPlayer)
     {
         GameEngine.getGui().println( "Merci d'avoir joué à GRAOU. Au revoir !." );
         GameEngine.getGui().enable( false );
