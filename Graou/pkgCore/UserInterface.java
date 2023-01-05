@@ -81,7 +81,7 @@ public class UserInterface implements ActionListener
             this.aEntryField.getCaret().setBlinkRate( 0 ); // cursor won't blink
             this.aEntryField.removeActionListener( this ); // won't react to entry
             this.aGameRunning = false;
-            this.println("Vous avez perdu !");
+            this.println("La limite de mouvement a été atteinte. Vous avez perdu !");
         }
     } // enable(.)
 
@@ -215,13 +215,18 @@ public class UserInterface implements ActionListener
     
     /**
      * Rafraîchit l'interface quand un changement de room est effectué (image + affichage description)
+     * Check également si le joueur n'a plus de mouvement pour stoper le jeu.
+     * 
      * @param pRoom la room dans laquelle le joueur se retrouve.
      */
-    public void updateRoom( final Room pRoom )
+    public void updateInterface( final Room pRoom )
     {
         this.println( pRoom.getLongDescription() );
         if ( pRoom.getImageName() != null )
             this.showImage( pRoom.getImageName() );
+            
+        if(!this.aEngine.getPlayer().resteMouvement())
+            this.enable(false);
     }// updateRoom()
     
 } // UserInterface 

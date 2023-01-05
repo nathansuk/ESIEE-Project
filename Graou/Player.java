@@ -3,6 +3,7 @@ import java.util.*;
 
 import Graou.pkgRooms.Room;
 import Graou.pkgItems.ItemList;
+import Graou.pkgCore.GameEngine;
 /**
  * Classe représentant le joueur.
  *
@@ -104,6 +105,8 @@ public class Player
     {
         this.removeLastRoomFromHistory();
         this.setCurrentRoom(this.getRoomHistory().peek());
+        this.removeMouvement();
+        GameEngine.getGui().updateInterface(this.aCurrentRoom);
     } // back()
     
     /**
@@ -113,15 +116,19 @@ public class Player
     {
         this.setCurrentRoom(pNextRoom);
         this.addRoomToHistory(pNextRoom);
-    }
+        this.removeMouvement();
+        GameEngine.getGui().updateInterface(this.aCurrentRoom);
+    } // move()
     
     /**
      * Réduis de 1 le nombre de mouvement du joueur jusqu'à temps qu'il perde.
+     * Regarde ensuite si le joueur possède encore des mouvements.
+     * Si il n'en a plus, le jeu est terminé (meilleure implémentation pour éviter répétition de code).
      */
     public void removeMouvement()
     {
         this.aMouvementRestant--;
-    }
+    }// removeMouvement()
     
     /**
      * @return true si le joueur possède encore des mouvements, false sinon
@@ -129,7 +136,7 @@ public class Player
     public boolean resteMouvement()
     {
         return this.aMouvementRestant > 0;
-    }
+    } // resteMouvement()
 
 
     

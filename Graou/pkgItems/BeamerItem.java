@@ -27,9 +27,8 @@ public class BeamerItem extends UsableItem
             GameEngine.getGui().println("Le beamer a été chargé. Réutilisez-le pour vous téléporter.");
         }
         else {
-            pPlayer.move(this.aBeamerRoom);
-            GameEngine.getGui().updateRoom(pPlayer.getCurrentRoom());
             GameEngine.getGui().println("Le beamer vous a téléporté.");
+            pPlayer.move(this.aBeamerRoom);
             this.aBeamerRoom = null;
         }
     }

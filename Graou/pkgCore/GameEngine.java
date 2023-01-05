@@ -141,6 +141,7 @@ public class GameEngine
         this.aPlayer.addRoomToHistory(entreeVillage);// start game outside
 
     } // createRooms()
+    
 
     
     

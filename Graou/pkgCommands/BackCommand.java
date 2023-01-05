@@ -21,14 +21,6 @@ public class BackCommand extends Command
     public boolean execute(Player pPlayer)
     {
          pPlayer.back();
-         
-         GameEngine.getGui().updateRoom(pPlayer.getCurrentRoom());
-         
-         pPlayer.removeMouvement();
-         if(!pPlayer.resteMouvement()){
-             GameEngine.getGui().enable(false);
-         }
-    
          return false;
     }
 
