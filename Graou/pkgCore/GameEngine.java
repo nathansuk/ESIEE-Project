@@ -184,7 +184,6 @@ public class GameEngine
         
         //Création du Player et assignation dans la Room de départ 
         this.aPlayer = new Player(entreeVillage);
-        this.aPlayer.addRoomToHistory(entreeVillage);// start game outside
 
     } // createRooms()
     

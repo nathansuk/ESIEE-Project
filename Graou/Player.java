@@ -28,7 +28,7 @@ public class Player
         this.aRoomHistory = new Stack<Room>();
         this.aInventory = new ItemList();
         this.aMaxWeight = 10.0;         // Par défaut
-        this.aMouvementRestant = 15;    // Par défaut
+        this.aMouvementRestant = 15;    // Par défaut*
     }// Player()
     
     /**
@@ -98,9 +98,7 @@ public class Player
      */
     public void removeLastRoomFromHistory()
     {
-        if( this.aRoomHistory.size() > 1 ) {
-            this.aRoomHistory.pop();
-        }    
+        this.aRoomHistory.pop();
     } //removeLastRoomFromHistory()
     
     /**
@@ -108,10 +106,14 @@ public class Player
      */
     public void back()
     {
-        this.removeLastRoomFromHistory();
-        this.setCurrentRoom(this.getRoomHistory().peek());
-        this.removeMouvement();
-        GameEngine.getGui().updateInterface(this.aCurrentRoom);
+        if(!this.aRoomHistory.isEmpty()) { 
+            this.setCurrentRoom(this.getRoomHistory().peek());
+            this.removeLastRoomFromHistory();
+            this.removeMouvement();
+            GameEngine.getGui().updateInterface(this.aCurrentRoom);   
+        } else {
+            GameEngine.getGui().println("Vous ne pouvez pas revenir en arrière");  
+        }
     } // back()
     
     /**
@@ -119,8 +121,8 @@ public class Player
      */
     public void move(final Room pNextRoom)
     {
+        this.addRoomToHistory(this.aCurrentRoom);
         this.setCurrentRoom(pNextRoom);
-        this.addRoomToHistory(pNextRoom);
         this.removeMouvement();
         GameEngine.getGui().updateInterface(this.aCurrentRoom);
         

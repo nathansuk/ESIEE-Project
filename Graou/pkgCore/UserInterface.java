@@ -1,11 +1,25 @@
 package Graou.pkgCore;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import java.awt.Panel;
+import java.awt.Button;
+import java.awt.GridLayout;
 import java.awt.Component;
-import java.awt.event.*;
+import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Insets;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.ActionEvent;
 import java.net.URL;
-import java.awt.image.*;
 import Graou.pkgCommands.Command;
 import Graou.pkgRooms.Room;
 
@@ -96,6 +110,7 @@ public class UserInterface implements ActionListener
         
         // Création des boutons et assignation des évènements
         // En partie aidé depuis : https://www.javatpoint.com/java-awt-button
+        
         Panel vPanelUser = new Panel();
         Button vButtonDir = new Button("go east");
         Button vButtonDir2 = new Button("go west");
