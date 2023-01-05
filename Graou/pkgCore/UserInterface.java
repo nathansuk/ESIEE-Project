@@ -124,6 +124,11 @@ public class UserInterface implements ActionListener
 
         this.aLog = new JTextArea();
         this.aLog.setEditable( false );
+        this.aLog.setMargin(new Insets(0, 5, 5, 0)); // SOURCE : https://stackoverflow.com/questions/2286881/jtextarea-and-jtextfield-internal-padding-on-text
+        this.aLog.setLineWrap(true);                 // SOURCE : https://stackoverflow.com/questions/6878345/stop-horizontal-scrolling-in-jtextarea
+        this.aLog.setWrapStyleWord(true);            // SOURCE : https://stackoverflow.com/questions/6878345/stop-horizontal-scrolling-in-jtextarea
+        
+        
         JScrollPane vListScroller = new JScrollPane( this.aLog );
         vListScroller.setForeground(Color.blue);
         vListScroller.setPreferredSize( new Dimension(200, 200) );
@@ -137,7 +142,6 @@ public class UserInterface implements ActionListener
         vPanel.add( this.aImage, BorderLayout.NORTH );
         vPanel.add( vListScroller, BorderLayout.CENTER );
         vPanel.add( this.aEntryField, BorderLayout.SOUTH );
-        //Places dispo : EAST WEST
         vPanel.add( vPanelUser, BorderLayout.EAST );
         
 

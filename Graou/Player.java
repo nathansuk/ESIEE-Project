@@ -32,6 +32,7 @@ public class Player
     }// Player()
     
     /**
+     * Retourne la room actuelle du joueur
      * @return La room actuelle du joueur
      */
     public Room getCurrentRoom()
@@ -40,6 +41,7 @@ public class Player
     } // getCurrentRoom()
     
     /**
+     * Retourne l'historique des pièces visitées
      * @return L'historique des pièces visitées
      */
     public Stack<Room> getRoomHistory()
@@ -48,6 +50,7 @@ public class Player
     } // getRoomHistory()
     
     /**
+     * Retourne l'inventaire du joueur
      * @return L'inventaire du joueur
      */
     public ItemList getItemList()
@@ -56,6 +59,7 @@ public class Player
     } // getItemList();
     
     /**
+     * Retourne le poids maximum que peut porter le joueur
      * @return Le poids maximum de l'inventaire
      */
     public double getMaxWeight()
@@ -64,6 +68,7 @@ public class Player
     }// getMaxWeight()
     
     /**
+     * Modifie le poids maximum que le joueur peut porter
      * @param pMaxWeight La nouvelle valeur de poids maximum
      */
     public void setMaxWeight( final double pMaxWeight )
@@ -119,7 +124,7 @@ public class Player
         this.removeMouvement();
         GameEngine.getGui().updateInterface(this.aCurrentRoom);
         
-        //Si le joueur arrive dans la pièce où est le Loup et qu'il n'a pas d'arme (epee)
+        //Si le joueur arrive dans la pièce où est le Loup et qu'il n'a pas d'arme (epee) logique potentiellement déplaçable dans une classe BossRoom
         if(pNextRoom.getCharacters().get("Loup") != null && this.getItemList().getItem("epee") == null){
             GameEngine.getGui().println("SACREBLEU ! Vous venez de rencontrer le loup et vous n'avez pas d'arme. Vous vous faite dévorer...");
             GameEngine.getGui().enable(false);
@@ -128,8 +133,6 @@ public class Player
     
     /**
      * Réduis de 1 le nombre de mouvement du joueur jusqu'à temps qu'il perde.
-     * Regarde ensuite si le joueur possède encore des mouvements.
-     * Si il n'en a plus, le jeu est terminé (meilleure implémentation pour éviter répétition de code).
      */
     public void removeMouvement()
     {
@@ -137,6 +140,7 @@ public class Player
     }// removeMouvement()
     
     /**
+     * Retourne true si il reste des mouvements possibles pour le joueur, false sinon
      * @return true si le joueur possède encore des mouvements, false sinon
      */
     public boolean resteMouvement()

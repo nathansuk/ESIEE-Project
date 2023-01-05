@@ -4,12 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import Graou.pkgCore.GameEngine;
 /**
- * This class is the main class of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.
+ * Classe qui initialise les commandes du jeu.
  * 
- * This class holds a collection of all command words known to the game.
- * It is used to recognise commands as they are typed in.
- *
  * @author Michael Kolling and David J. Barnes, Nathan SUK (ajout des commandes)
  * @version 2011.07.31
  */

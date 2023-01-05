@@ -53,7 +53,6 @@ public class GameEngine
     public void setGUI( final UserInterface pUserInterface )
     {
         this.aGui = pUserInterface;
-        this.printWelcome();
     } // setGui()
     
     /**
@@ -90,9 +89,7 @@ public class GameEngine
         this.aGui.println( "Une terrible malédiction plane sur ce petit village, vous êtes appelé pour résoudre ce mystère." );
         this.aGui.println( "Trouvez des indices afin de définir qui sont les personnes responsables de tous ces maux." );
         this.aGui.print( "\n" );
-        this.aGui.println( this.aPlayer.getCurrentRoom().getLongDescription() );
-        if ( this.aPlayer.getCurrentRoom().getImageName() != null )
-            this.aGui.showImage( this.aPlayer.getCurrentRoom().getImageName() );
+        this.aGui.updateInterface(this.aPlayer.getCurrentRoom());
     } // printWelcome()
 
     /**

@@ -5,7 +5,7 @@ import Graou.pkgCore.GameEngine;
 import Graou.pkgRooms.Room;
 import Graou.Character;
 /**
- * Décrivez votre classe WeaponItem ici.
+ * Un Item utilisable pour tuer un ennemi
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)

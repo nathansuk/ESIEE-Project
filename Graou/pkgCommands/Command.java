@@ -2,7 +2,7 @@ package Graou.pkgCommands;
 
 import Graou.Player;
 /**
- * Classe Command - une commande du jeu d'aventure Zuul.
+ * Classe Commande qui définit une commande
  *
  * @author votre nom
  */

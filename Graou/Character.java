@@ -28,6 +28,7 @@ public class Character
     }
     
     /**
+     * Retourne le nom du personnage
      * @return le nom du personnage
      */
     public String getNom()
@@ -36,6 +37,7 @@ public class Character
     } // getNom()
     
     /**
+     * Retourne le dialogue du personnage
      * @return la/les ligne.s de dialogue du personnage
      */
     public String getDialogue()
@@ -44,6 +46,7 @@ public class Character
     }
     
     /**
+     * Retourne la pièce dans laquelle se trouve le personnage
      * @return la Room dans laquelle se trouve le personnage
      */
     public Room getCurrentRoom()
