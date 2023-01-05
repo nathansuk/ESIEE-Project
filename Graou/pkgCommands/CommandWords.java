@@ -34,6 +34,7 @@ public class CommandWords
         commands.put("drop", new DropCommand());
         commands.put("use", new UseCommand());
         commands.put("talk", new TalkCommand());
+        commands.put("look", new LookCommand());
     }
 
     /**

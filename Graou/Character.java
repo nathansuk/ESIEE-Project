@@ -4,8 +4,7 @@ import Graou.pkgRooms.Room;
 /**
  * Représente un personnage non jouable, présent dans une pièce.
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class Character
 {
