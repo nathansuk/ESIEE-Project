@@ -15,6 +15,7 @@ public class Player
     private Stack<Room> aRoomHistory;
     private ItemList aInventory;
     private double aMaxWeight;
+    private int aMouvementRestant;
     
     /**
      * Constructeur
@@ -26,6 +27,7 @@ public class Player
         this.aRoomHistory = new Stack<Room>();
         this.aInventory = new ItemList();
         this.aMaxWeight = 10.0;
+        this.aMouvementRestant = 2;
     }// Player()
     
     /**
@@ -111,6 +113,22 @@ public class Player
     {
         this.setCurrentRoom(pNextRoom);
         this.addRoomToHistory(pNextRoom);
+    }
+    
+    /**
+     * Réduis de 1 le nombre de mouvement du joueur jusqu'à temps qu'il perde.
+     */
+    public void removeMouvement()
+    {
+        this.aMouvementRestant--;
+    }
+    
+    /**
+     * @return true si le joueur possède encore des mouvements, false sinon
+     */
+    public boolean resteMouvement()
+    {
+        return this.aMouvementRestant > 0;
     }
 
 

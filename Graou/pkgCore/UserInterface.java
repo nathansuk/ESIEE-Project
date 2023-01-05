@@ -22,6 +22,7 @@ public class UserInterface implements ActionListener
     private JTextField aEntryField;
     private JTextArea  aLog;
     private JLabel     aImage;
+    private boolean    aGameRunning;
 
     /**
      * Construct a UserInterface. As a parameter, a Game Engine
@@ -34,6 +35,7 @@ public class UserInterface implements ActionListener
     {
         this.aEngine = pGameEngine;
         this.createGUI();
+        this.aGameRunning = true;
     } // UserInterface(.)
 
     /**
@@ -78,6 +80,8 @@ public class UserInterface implements ActionListener
         if ( ! pOnOff ) { // disable
             this.aEntryField.getCaret().setBlinkRate( 0 ); // cursor won't blink
             this.aEntryField.removeActionListener( this ); // won't react to entry
+            this.aGameRunning = false;
+            this.println("Vous avez perdu !");
         }
     } // enable(.)
 
@@ -157,14 +161,17 @@ public class UserInterface implements ActionListener
      */
     public void actionPerformed( final ActionEvent pE ) 
     {   
-        if(pE.getSource() instanceof Button)
-        {
-            Button vBoutonClique = (Button)pE.getSource();
-            Command vCommande = this.aEngine.getParser().getCommand( vBoutonClique.getLabel() );
-            
-            this.processCommand(vCommande);
+        if(this.aGameRunning){
+            if(pE.getSource() instanceof Button) {
+                Button vBoutonClique = (Button)pE.getSource();
+                Command vCommande = this.aEngine.getParser().getCommand( vBoutonClique.getLabel() );
+                
+                this.processCommand(vCommande);
+            } else {
+                this.processCommand(); // never suppress this line      
+            }   
         } else {
-            this.processCommand(); // never suppress this line      
+            this.println("Le jeu est terminé.");
         }
     } // actionPerformed(.)
 
@@ -215,6 +222,6 @@ public class UserInterface implements ActionListener
         this.println( pRoom.getLongDescription() );
         if ( pRoom.getImageName() != null )
             this.showImage( pRoom.getImageName() );
-    }
+    }// updateRoom()
     
 } // UserInterface 

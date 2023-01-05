@@ -3,7 +3,7 @@ package Graou.pkgCommands;
 import Graou.Player;
 import Graou.pkgCore.GameEngine;
 import Graou.pkgItems.BeamerItem;
-import Graou.pkgItems.Usable;
+import Graou.pkgItems.UsableItem;
 /**
  * Décrivez votre classe UseCommand ici.
  *
@@ -31,8 +31,8 @@ public class UseCommand extends Command
         if(this.hasSecondWord()){
             
             if(pPlayer.getItemList().contient(this.getSecondWord())) {
-                if((pPlayer.getItemList().getItem(this.getSecondWord()) instanceof Usable)) {
-                    Usable vItemUsable = (Usable)pPlayer.getItemList().getItem(this.getSecondWord());
+                if((pPlayer.getItemList().getItem(this.getSecondWord()) instanceof UsableItem)) {
+                    UsableItem vItemUsable = (UsableItem)pPlayer.getItemList().getItem(this.getSecondWord());
                     vItemUsable.use(pPlayer);
                 } else {
                     GameEngine.getGui().println("Cet objet n'est pas utilisable");

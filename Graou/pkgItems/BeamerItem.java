@@ -11,7 +11,7 @@ import Graou.pkgRooms.Room;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class BeamerItem extends Item implements Usable
+public class BeamerItem extends UsableItem
 {
     private Room aBeamerRoom;
     

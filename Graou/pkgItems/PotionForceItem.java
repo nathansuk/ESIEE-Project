@@ -9,7 +9,7 @@ import Graou.pkgCore.GameEngine;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class PotionForceItem extends Item implements Usable
+public class PotionForceItem extends DestroyableItem
 {
     private final int AUGMENTATION_FORCE = 100;
     
@@ -28,5 +28,6 @@ public class PotionForceItem extends Item implements Usable
     {
         pPlayer.setMaxWeight(AUGMENTATION_FORCE);
         GameEngine.getGui().println("Vous pouvez désormais porter : " + AUGMENTATION_FORCE + "grammes dans votre inventaire.");
+        this.destroyItem(pPlayer);
     }
 }
