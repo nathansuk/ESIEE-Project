@@ -1,5 +1,6 @@
 package Graou.pkgCore;
 
+import java.util.ArrayList;
 import Graou.Player;
 import Graou.Character;
 import Graou.pkgRooms.Room;
@@ -8,8 +9,6 @@ import Graou.pkgItems.PotionForceItem;
 import Graou.pkgItems.WeaponItem;
 import Graou.pkgRooms.TransporterRoom;
 import Graou.pkgItems.Item;
-import java.util.*;
-import java.io.*;
 
 /**
  *  Classe du moteur du jeu. 
@@ -41,6 +40,10 @@ public class GameEngine
         return aGui;
     } // getGui()
     
+    /**
+     * Retourne le tableau contenant toutes les Room du jeu
+     * @return l'ArrayList contenant les rooms du jeu
+     */
     public static ArrayList<Room> getRooms()
     {
         return aRooms;
@@ -152,9 +155,9 @@ public class GameEngine
         maison2.setExit("west", placeDroite);
         
         //Création des items
-        Item vBeamer = new BeamerItem("beamer", "Un mystérieux objet vous permettant de vous téléporter dans une room.", 10, 10); 
-        Item vPotion = new PotionForceItem("potion", "Une potion augmentant votre force", 10, 10);
-        Item vEpee = new WeaponItem("epee", "Une puissante épée permettant de tuer le loup", 10, 10);
+        Item vBeamer = new BeamerItem("beamer", "Un mystérieux objet vous permettant de vous téléporter dans une room.", 10); 
+        Item vPotion = new PotionForceItem("potion", "Une potion augmentant votre force", 10);
+        Item vEpee = new WeaponItem("epee", "Une puissante épée permettant de tuer le loup", 10);
         
         //Ajout des items dans les rooms
         entreeVillage.getItems().ajouter(vPotion);

@@ -21,6 +21,8 @@ public class TakeCommand extends Command
     
     /**
      * Le joueur prend un des objets de la room avec le nom associé au second mot
+     * @param  pPlayer Joueur concerné
+     * @return boolean 
      */
     public boolean execute(final Player pPlayer)
     {

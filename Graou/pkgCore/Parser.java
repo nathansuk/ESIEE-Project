@@ -25,11 +25,11 @@ import Graou.pkgCommands.Command;
 public class Parser 
 {
 
-    private CommandWords commands;  // holds all valid command words
+    private CommandWords vCommandes;  // holds all valid command words
 
     public Parser() 
     {
-        commands = new CommandWords();
+        vCommandes = new CommandWords();
     }  //Parser()
 
     public Command getCommand(final String pInputLine) 
@@ -52,7 +52,7 @@ public class Parser
 
         // note: we just ignore the rest of the input line.
 
-        Command command = commands.get(word1);
+        Command command = vCommandes.get(word1);
         if(command != null) {
             command.setSecondWord(word2);
         }
@@ -64,6 +64,6 @@ public class Parser
      */
     public void showCommands()
     {
-        commands.showAll();
+        vCommandes.showAll();
     } // showCommands()
 }

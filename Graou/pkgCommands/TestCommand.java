@@ -21,11 +21,10 @@ public class TestCommand extends Command
     }
 
     /**
-     * Va chercher le fichier de test dans le dossier /Tests
-     * Execute chaque commande une à une.
+     * Va chercher le fichier de test dans le dossier /Tests et éxecute chaque commande une à une.
      * @return false
      */
-    public boolean execute(Player pPlayer)
+    public boolean execute(final Player pPlayer)
     {
         String vFichier = "Tests/"+this.getSecondWord()+".txt"; 
         try (Scanner vScanner = new Scanner(new File(vFichier))) {

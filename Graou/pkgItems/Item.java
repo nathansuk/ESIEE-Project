@@ -10,18 +10,16 @@ public class Item
 {
     private String aNom;
     private String aDescription;
-    private double aPrix;
     private double aWeight;
 
     /**
      * Constructeur d'objets de classe Item
      */
-    public Item(final String pNom, final String pDescription, final double pPrix, final double pWeight)
+    public Item(final String pNom, final String pDescription, final double pWeight)
     {
         // initialisation des variables d'instance
         this.aNom = pNom;
         this.aDescription = pDescription;
-        this.aPrix = pPrix;
         this.aWeight = pWeight;
     } // Item()
     
@@ -58,24 +56,7 @@ public class Item
     {
         this.aDescription = pDescription;
     } // setDescription()
-    
-    /**
-     * @return le prix de l'item
-     */
-    public double getPrix()
-    {
-        return this.aPrix;
-    } // getPrix()
-    
-    /**
-     * Change le prix de l'item
-     * @param pPrix le nouveau prix
-     */
-    public void setPrix( final double pPrix )
-    {
-        this.aPrix = pPrix;
-    } // setPrix()
-    
+
     /**
      * @return le poids de l'objet
      */

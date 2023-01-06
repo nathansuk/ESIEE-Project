@@ -32,10 +32,10 @@ public class TransporterRoom extends Room
      */
     private Room findRandomRoom()
     {
-        int vNbreRandom = new Random().nextInt(GameEngine.getRooms().size());
-        Room vNextRoom = GameEngine.getRooms().get(vNbreRandom);
-        if(vNextRoom.equals(this)) {
-            return this.findRandomRoom();
+        int vNbreRandom = new Random().nextInt(GameEngine.getRooms().size()); // génération aléatoire d'un nombre grâce à l'objet Random
+        Room vNextRoom = GameEngine.getRooms().get(vNbreRandom); // On récupère une des rooms dans le tableau
+        if(vNextRoom.equals(this)) { 
+            return this.findRandomRoom(); // Si la Room piochée est la même que celle où se trouve le joueur on relance.
         }
         else {
             return vNextRoom;

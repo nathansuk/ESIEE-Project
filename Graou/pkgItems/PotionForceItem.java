@@ -15,8 +15,8 @@ public class PotionForceItem extends DestroyableItem
     /**
      * Constructeur d'objets de classe PotionForceItem
      */
-    public PotionForceItem(final String pNom, final String pDescription, final double pPrix, final double pWeight) {
-        super(pNom, pDescription, pPrix, pWeight);
+    public PotionForceItem(final String pNom, final String pDescription, final double pWeight) {
+        super(pNom, pDescription, pWeight);
     } // PotionForce()
 
     /**

@@ -1,0 +1,9 @@
+take potion
+drop potion
+take potion
+use potion
+go north
+back
+help
+talk Villageois
+quit

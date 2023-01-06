@@ -1,6 +1,6 @@
 package Graou;
-import java.util.*;
 
+import java.util.Stack;
 import Graou.pkgRooms.Room;
 import Graou.pkgItems.ItemList;
 import Graou.pkgCore.GameEngine;
@@ -11,7 +11,6 @@ import Graou.pkgCore.GameEngine;
  */
 public class Player
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private Room aCurrentRoom;
     private Stack<Room> aRoomHistory;
     private ItemList aInventory;

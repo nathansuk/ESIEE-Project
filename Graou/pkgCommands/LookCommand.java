@@ -21,7 +21,6 @@ public class LookCommand extends Command
 
     /**
      * Liste les items de la room et affiche une chaîne de caractère, si un second mot est passé affiche la description de l'item
-     *
      * @param  pPlayer Joueur concerné
      * @return boolean 
      */

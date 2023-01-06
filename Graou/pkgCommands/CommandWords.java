@@ -12,25 +12,25 @@ import Graou.pkgCore.GameEngine;
 
 public class CommandWords
 {
-    private HashMap<String, Command> commands;
+    private HashMap<String, Command> vCommandes;
 
     /**
      * Constructor - initialise the command words.
      */
     public CommandWords()
     {
-        commands = new HashMap<String, Command>();
-        commands.put("go", new GoCommand());
-        commands.put("back", new BackCommand());
-        commands.put("help", new HelpCommand());
-        commands.put("quit", new QuitCommand());
-        commands.put("inventaire", new InventaireCommand());
-        commands.put("test", new TestCommand());
-        commands.put("take", new TakeCommand());
-        commands.put("drop", new DropCommand());
-        commands.put("use", new UseCommand());
-        commands.put("talk", new TalkCommand());
-        commands.put("look", new LookCommand());
+        vCommandes = new HashMap<String, Command>();
+        vCommandes.put("go", new GoCommand());
+        vCommandes.put("back", new BackCommand());
+        vCommandes.put("help", new HelpCommand());
+        vCommandes.put("quit", new QuitCommand());
+        vCommandes.put("inventaire", new InventaireCommand());
+        vCommandes.put("test", new TestCommand());
+        vCommandes.put("take", new TakeCommand());
+        vCommandes.put("drop", new DropCommand());
+        vCommandes.put("use", new UseCommand());
+        vCommandes.put("talk", new TalkCommand());
+        vCommandes.put("look", new LookCommand());
     }
 
     /**
@@ -39,7 +39,7 @@ public class CommandWords
      */
     public Command get(final String word)
     {
-        return (Command)commands.get(word);
+        return (Command)vCommandes.get(word);
     }
 
     /**
@@ -47,7 +47,7 @@ public class CommandWords
      */
     public void showAll() 
     {
-        for(Iterator i = commands.keySet().iterator(); i.hasNext(); ) {
+        for(Iterator i = vCommandes.keySet().iterator(); i.hasNext(); ) {
             GameEngine.getGui().print(i.next() + "  ");
         }
         GameEngine.getGui().println("");

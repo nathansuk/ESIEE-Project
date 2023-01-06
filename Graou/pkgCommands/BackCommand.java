@@ -20,7 +20,7 @@ public class BackCommand extends Command
     /**
      * Fais retourner le joueur dans la pièce précédente dans la Stack
      */
-    public boolean execute(Player pPlayer)
+    public boolean execute(final Player pPlayer)
     {
          pPlayer.back();
          return false;

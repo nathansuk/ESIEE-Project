@@ -2,7 +2,7 @@ import Graou.pkgCore.GameEngine;
 import Graou.pkgCore.UserInterface;
 import java.util.HashMap;
 /**
- * Classe Game - le moteur du jeu.
+ * Classe Game - génère une interface et un moteur du jeu.
  *
  * @author Nathan SUK
  */
@@ -12,7 +12,7 @@ public class Game
     private GameEngine aEngine;
 
     /**
-     * Create the game and initialise its internal map. Create the inerface and link to it.
+     * Crée le jeu et instancie un nouveau Moteur et une nouvelle interface.
      */
     public Game() 
     {
@@ -20,7 +20,7 @@ public class Game
         this.aGui = new UserInterface( this.aEngine );
         this.aEngine.setGUI( this.aGui );
         this.aEngine.play();
-    }
+    }// Game()
     
     
 } // Game

@@ -1,0 +1,11 @@
+take potion
+use potion
+go north
+go west
+go south
+go up
+take beamer
+use beamer
+back
+back
+use beamer

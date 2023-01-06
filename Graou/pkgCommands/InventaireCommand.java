@@ -21,7 +21,7 @@ public class InventaireCommand extends Command
      * Liste les items présents dans l'inventaire
      * @param pPlayer joueur
      */
-    public boolean execute(Player pPlayer)
+    public boolean execute(final Player pPlayer)
     {
         GameEngine.getGui().println(" Votre inventaire contient : " + pPlayer.getItemList().getItemsString());
         return false;

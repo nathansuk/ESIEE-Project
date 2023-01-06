@@ -7,8 +7,7 @@ import Graou.Character;
 /**
  * Un Item utilisable pour tuer un ennemi
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Nathan SUK
  */
 public class WeaponItem extends UsableItem
 {
@@ -16,8 +15,8 @@ public class WeaponItem extends UsableItem
     /**
      * Constructeur d'objets de classe WeaponItem
      */
-    public WeaponItem(final String pNom, final String pDescription, final double pPrix, final double pWeight) {
-        super(pNom, pDescription, pPrix, pWeight);
+    public WeaponItem(final String pNom, final String pDescription, final double pWeight) {
+        super(pNom, pDescription, pWeight);
     }
     
     /**

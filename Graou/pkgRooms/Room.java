@@ -5,7 +5,7 @@ import Graou.pkgItems.ItemList;
 import java.util.HashMap;
 import java.util.Set;
 /**
- * Classe Room - un lieu du jeu d'aventure.
+ * Classe Room - un lieu du jeu.
  *
  * @author Nathan SUK
  */
@@ -58,6 +58,7 @@ public class Room
     } // setExits()
     
     /**
+     * Retourne la room correspondant à la direction souhaitée
      * @return the exit corresponding to the direction
      * @param String The direction of the exit.
      */
@@ -68,7 +69,8 @@ public class Room
     
     
     /**
-     * @return all exits of a room.
+     * Retourne une string contenant la liste des sorties (directions) possibles.
+     * @return Les sorties de la pièce sous forme de String.
      */
     public String getExitString()
     {
@@ -83,6 +85,7 @@ public class Room
     } // getExitString()
     
     /**
+     * Retourne une String contenant la description de la room
      * @return the current room and the different exits.
      */
     public String getLongDescription()
@@ -108,15 +111,24 @@ public class Room
          return this.aImageName;
     } // getImageName()
     
+    /**
+     * Retourne la liste des personnages présents dans la room
+     * @return La HashMap contenant les String (nom des personnages) et l'objet Character associé.
+     */
     public HashMap<String, Character> getCharacters()
     {
         return this.aCharacters;
-    }
+    } // getCharacters()
     
+    /**
+     * Retourne un Character en particulier parmis la liste
+     * @param pNom le nom du personnage recherché.
+     * @return l'objet Character correspondant au nom
+     */
     public Character getCharacter(final String pNom)
     {
         return this.aCharacters.get(pNom);
-    }
+    } // getCharacter()
     
     /**
      * Ajoute un Character à la liste
@@ -124,17 +136,19 @@ public class Room
     public void addCharacter(final String pNom, final Character pCharacter)
     {
         this.aCharacters.put(pNom, pCharacter);
-    }
+    } //addCharacter()
     
     /**
+     * Retourne true si la pièce contient des personnages, false sinon
      * @return si la room contient des Character
      */
     public boolean hasCharacter()
     {
         return this.aCharacters.size() > 0;
-    }
+    } // hasCharacter()
     
     /**
+     * Retourne une String contenant la liste des personnages
      * @return une chaîne de charactère listant les personnages non jouables présents dans la pièce
      */
     public String getCharactersString()
@@ -145,7 +159,7 @@ public class Room
             vString += vNomPersonnage+" ";
         }
         return vString;
-    }
+    } // getCharactersString()
 
 
 } // Room

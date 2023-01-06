@@ -20,10 +20,9 @@ public class GoCommand extends Command
 
     /**
      * Execution de la commande "go [direction]"
-     *
      * @param  pPlayer joueur
      */
-    public boolean execute(Player pPlayer)
+    public boolean execute(final Player pPlayer)
     {
         if(hasSecondWord()) {
             

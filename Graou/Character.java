@@ -8,7 +8,6 @@ import Graou.pkgRooms.Room;
  */
 public class Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String aNom;
     private String aDialogue;
     private Room   aCurrentRoom;

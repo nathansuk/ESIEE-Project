@@ -21,10 +21,9 @@ public class UseCommand extends Command
 
     /**
      * Regarde si l'item passé en deuxième mot est présent dans l'inventaire et si c'est un item Utilisable, si oui, l'utiliser en appelant Item.use()
-     *
      * @param  pPlayer joueur
      */
-    public boolean execute(Player pPlayer)
+    public boolean execute(final Player pPlayer)
     {
         if(this.hasSecondWord()){
             

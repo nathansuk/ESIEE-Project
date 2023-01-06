@@ -1,5 +1,5 @@
 take
 take itemquiexistepas
-take carte
+take potion
 drop itemquiexistepas
-drop carte
+drop potion

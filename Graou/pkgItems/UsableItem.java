@@ -10,9 +10,9 @@ import Graou.Player;
 public abstract class UsableItem extends Item
 {
 
-    public UsableItem(final String pNom, final String pDescription, final double pPrix, final double pWeight)
+    public UsableItem(final String pNom, final String pDescription, final double pWeight)
     {
-        super(pNom, pDescription, pPrix, pWeight);
+        super(pNom, pDescription, pWeight);
     } // UsableItem()
 
     /**
